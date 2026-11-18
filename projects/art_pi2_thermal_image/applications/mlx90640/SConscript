@@ -1,0 +1,9 @@
+import rtconfig
+from building import *
+
+cwd = GetCurrentDir()
+libs = ['m'] if rtconfig.CROSS_TOOL == 'gcc' else []
+group = DefineGroup('MLX90640', Glob('*.c'), depend=['BSP_USING_MLX90640'],
+                    CPPPATH=[cwd], LIBS=libs)
+
+Return('group')

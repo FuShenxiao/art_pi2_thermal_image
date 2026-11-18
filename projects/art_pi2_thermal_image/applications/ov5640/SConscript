@@ -1,0 +1,6 @@
+from building import *
+
+cwd = GetCurrentDir()
+group = DefineGroup('OV5640', Glob('*.c'), depend=['BSP_USING_OV5640'], CPPPATH=[cwd])
+
+Return('group')
